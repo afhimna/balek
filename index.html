@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUOTA LIBURAN</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #282c35; /* Warna latar belakang lebih gelap */
+            color: #61dafb; /* Warna teks biru muda */
+        }
+
+        #countdown-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 20px; /* Tambahkan jarak di bagian bawah countdown-container */
+        }
+
+        .countdown-box {
+            border: 2px solid #61dafb; /* Garis tepi biru muda */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1e1e1e; /* Warna latar belakang lebih gelap */
+            color: white; /* Warna teks putih */
+            transition: background-color 0.3s;
+        }
+
+        .countdown-box:hover {
+            background-color: #383838; /* Warna latar belakang saat dihover */
+        }
+
+        .countdown-box b {
+            font-size: 36px;
+        }
+
+        button {
+            background-color: #61dafb; /* Latar belakang tombol biru muda */
+            color: white; /* Warna teks putih */
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: #383838; /* Latar belakang tombol lebih gelap saat dihover */
+        }
+
+        #days {
+            margin-left: auto; 
+            margin-right: auto; 
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color: #61dafb;">KUOTA LIBURAN</h2>
+
+    <div id="countdown-container">
+        <div class="countdown-box" id="hours">
+            <div id="hours-number"></div>
+            <div>Jam</div>
+        </div>
+
+        <div class="countdown-box" id="minutes">
+            <div id="minutes-number"></div>
+            <div>Menit</div>
+        </div>
+
+        <div class="countdown-box" id="seconds">
+            <div id="seconds-number"></div>
+            <div>Detik</div>
+        </div>
+    </div>
+
+    <button id="days">Days</button>
+
+    <script>
+        var countdownDate = new Date("April 25, 2024 18:00:00 GMT+0700").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countdownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("hours-number").innerHTML = "<b>" + hours + "</b>";
+            document.getElementById("minutes-number").innerHTML = "<b>" + minutes + "</b>";
+            document.getElementById("seconds-number").innerHTML = "<b>" + seconds + "</b>";
+            document.getElementById("days").innerHTML = days + " Hari";
+        }, 1000);
+    </script>
+    <div>
+    <p>OJO TELAT!</p>
+    <a href="https://www.instagram.com/umarhamdan_a/"><img src="https://i.ibb.co/GJQLx7r/instagram-logo.png" alt="Instagram" style="width: 50px; height: 50px; opacity: 0.8;"></a>
+    <a href="https://wa.me/62859106771139"><img src="https://i.ibb.co/fH3g5XW/whatsapp-logo.png" alt="WhatsApp" style="width: 50px; height: 50px; opacity: 0.8;"></a>
+    <a href="https://t.me/AFHIMNA"><img src="https://i.ibb.co/2tMtmy1/telegram-logo.png" alt="Telegram" style="width: 50px; height: 50px;"></a>
+    <p>this website is created by foztoro© .</p>
+</div>
+</body>
+</html>
